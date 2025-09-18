@@ -23,3 +23,12 @@ pnpm create next-app --example with-playwright with-playwright-app
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+
+
+
+
+## Learned
+
+### 25/09/19
+- 「Playwright」の実行の方法

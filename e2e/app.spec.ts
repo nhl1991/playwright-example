@@ -1,5 +1,13 @@
 // app router.
 
+//　テストファイルの名前は「___.spec.ts」や「＿＿＿.test.ts」
+  
+
+// * 「npx playwright test」
+// * 「npx playwright foo.spec.ts」
+// * 「npx playwright test -g "テストの名"」は、名前で指定したテストのみを実行する。
+// * npx playwright test —ui // UI모드
+
 import { test, expect } from "@playwright/test";
 
 test("should navigate to the about page and back to Home", async ({ page }) => {
@@ -16,12 +24,10 @@ test("should navigate to the about page and back to Home", async ({ page }) => {
   await expect(page).toHaveURL("/");
 });
 
-
 // 実行方法
 // 「npx playwright test app.spec.ts -g "Execute playwright by name」
 // 「npx playwright test "Execute playwright by name"」
 // 英語の大文字小文字を区別しません
 test("Execute playwright by name", async ({ page }) => {
-  await page.goto("/")
-
+  await page.goto("/");
 });
