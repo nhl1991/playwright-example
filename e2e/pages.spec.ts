@@ -1,3 +1,5 @@
+// test for page router
+
 import { test, expect } from "@playwright/test";
 
 test("should navigate to the about page", async ({ page }) => {
@@ -12,4 +14,6 @@ test("should navigate to the about page", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     "About Page",
   );
+
+  await expect(page.getByRole("heading", { level: 2})).toContainText("Playwright is a E2E")
 });

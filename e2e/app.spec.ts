@@ -1,6 +1,8 @@
+// app router.
+
 import { test, expect } from "@playwright/test";
 
-test("should navigate to the about page", async ({ page }) => {
+test("should navigate to the about page and back to Home", async ({ page }) => {
   // Start from the index page (the baseURL is set via the webServer in the playwright.config.ts)
   await page.goto("/");
   // Find an element with the text 'About' and click on it
@@ -9,4 +11,17 @@ test("should navigate to the about page", async ({ page }) => {
   await expect(page).toHaveURL("/about");
   // The new page should contain an h1 with "About"
   await expect(page.locator("h1")).toContainText("About");
+  await expect(page.locator("h2")).toContainText("Playwright is a E2E");
+  await page.click("text=Home");
+  await expect(page).toHaveURL("/");
+});
+
+
+// 実行方法
+// 「npx playwright test app.spec.ts -g "Execute playwright by name」
+// 「npx playwright test "Execute playwright by name"」
+// 英語の大文字小文字を区別しません
+test("Execute playwright by name", async ({ page }) => {
+  await page.goto("/")
+
 });
